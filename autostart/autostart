@@ -11,8 +11,8 @@ picom --experimental-backends &
 ~/dot/dwm-6.4/autostart/bar &
 
 # Background
-feh --bg-fill /media/void/dot/wall/wallhaven-vmxmxl_1920x1080.png &
+#feh --bg-fill /media/void/dot/wall/wallhaven-vmxmxl_1920x1080.png &
 
 # Update Info
-~/bin/update_info
+#~/bin/update_info
 

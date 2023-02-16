@@ -15,7 +15,7 @@ static const int vertpad                 = 8;       /* vertical padding of bar *
 static const int sidepad                 = 8;       /* horizontal padding of bar */
 static const int horizpadbar             = 6;        /* horizontal padding for statusbar */
 static const int vertpadbar              = 12;        /* vertical padding for statusbar */
-static const char *fonts[]               = { "Iosevka Mayukai Sonata:Bold:size=12", "Symbols Nerd Font:Semibold:size=16" };
+static const char *fonts[]               = { "JetBrainsMono Nerd font:Bold:size=12", "Symbols Nerd Font:Semibold:size=16" };
 
 #include "colors/rose-pine.h"
 static const char *colors[][3]  = {
@@ -72,7 +72,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -100,10 +100,10 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 
   // Programs //
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                      XK_Return, spawn,          {.v = termcmd } },
   { MODKEY,                       XK_bracketleft, spawn,     SHCMD("~/bin/volcon") },
-  { MODKEY,                       XK_Print,  spawn,          SHCMD("~/bin/scrot") },
+  { MODKEY,                       XK_Print,  spawn,          SHCMD("/bin/scrot") },
   // Programs: brightness //
 	{ 0,                            0x1008FF02, spawn,         {.v = ubright } },
 	{ 0,                            0x1008FF03, spawn,         {.v = dbright } },
@@ -133,20 +133,20 @@ static const Key keys[] = {
 
 
   // Visual: gaps //
-  { MODKEY|Mod4Mask,              XK_h,      incrgaps,       {.i = +1 } },
-  { MODKEY|Mod4Mask,              XK_l,      incrgaps,       {.i = -1 } },
-  { MODKEY|Mod4Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
-  { MODKEY|Mod4Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } },
-  { MODKEY|Mod4Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
-  { MODKEY|Mod4Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
-  { MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-  { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+  { MODKEY|Mod1Mask,              XK_h,      incrgaps,       {.i = +1 } },
+  { MODKEY|Mod1Mask,              XK_l,      incrgaps,       {.i = -1 } },
+  { MODKEY|Mod1Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
+  { MODKEY|Mod1Mask|ShiftMask,    XK_l,      incrogaps,      {.i = -1 } },
+  { MODKEY|Mod1Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
+  { MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
+  { MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
+  { MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
   { MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },
   { MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },
   { MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
   { MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
-  { MODKEY|Mod4Mask,              XK_y,      incrohgaps,     {.i = +1 } },
-  { MODKEY|Mod4Mask,              XK_o,      incrohgaps,     {.i = -1 } },
+  { MODKEY|Mod1Mask,              XK_y,      incrohgaps,     {.i = +1 } },
+  { MODKEY|Mod1Mask,              XK_o,      incrohgaps,     {.i = -1 } },
   { MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
   { MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
 
